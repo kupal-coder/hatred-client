@@ -9,7 +9,6 @@ import androidx.browser.customtabs.CustomTabsIntent
 import java.io.File
 import java.net.URLEncoder
 import java.security.MessageDigest
-import kotlin.random.Random
 
 class SessionManager(private val context: Context) {
 
@@ -17,7 +16,6 @@ class SessionManager(private val context: Context) {
         private const val SESSION_FILE = "session_data"
         private const val SESSION_DURATION_HOURS = 4
         private const val SESSION_DURATION_MS = SESSION_DURATION_HOURS * 60 * 60 * 1000L
-        private const val LINKVERTISE_USER_ID = "1444843"
         private const val YOUR_DOMAIN = API.LVAUTH
         private const val SECRET_SALT = "pFzBVr9YzofdxjDrJO1xdW=qeEF2VVIq"
     }
@@ -54,17 +52,6 @@ class SessionManager(private val context: Context) {
         return (1..16)
             .map { chars.random() }
             .joinToString("")
-    }
-
-    private fun generateLinkvertiseUrl(userId: String, targetLink: String): String {
-        val randomNumber = Random.nextInt(0, 1000)
-        val baseUrl = "https://link-to.net/$userId/$randomNumber/dynamic"
-        val base64Encoded = Base64.encodeToString(
-            targetLink.toByteArray(),
-            Base64.NO_WRAP
-        )
-
-        return "$baseUrl?r=$base64Encoded"
     }
 
     private fun hasValidSession(): Boolean {
@@ -110,18 +97,13 @@ class SessionManager(private val context: Context) {
         // Create your domain URL with req parameter
         val yourDomainUrl = "$YOUR_DOMAIN?req=$reqCode"
 
-        // Generate Linkvertise URL pointing to your domain
-        val linkvertiseUrl = generateLinkvertiseUrl(
-            userId = LINKVERTISE_USER_ID,
-            targetLink = yourDomainUrl
-        )
-
+        // Open the auth page directly
         // Launch Custom Tab
         val customTabsIntent = CustomTabsIntent.Builder()
             .setShowTitle(true)
             .build()
 
-        customTabsIntent.launchUrl(activity, Uri.parse(linkvertiseUrl))
+        customTabsIntent.launchUrl(activity, Uri.parse(yourDomainUrl))
         activity.finish()
     }
 
