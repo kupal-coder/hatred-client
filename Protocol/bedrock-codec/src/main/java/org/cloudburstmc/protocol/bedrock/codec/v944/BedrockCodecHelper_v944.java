@@ -53,13 +53,14 @@ public class BedrockCodecHelper_v944 extends BedrockCodecHelper_v924 {
         packet.setClientCooldownState(buffer.readByte());
     }
 
-    @Override
+    // Note: no @Override — local supertype chain predates Presence support.
+    // New API surface for v944+; currently unused by serializers.
     public void writePresenceConfiguration(ByteBuf buffer, PresenceConfiguration configuration) {
         writeString(buffer, configuration.experienceName());
         writeString(buffer, configuration.worldName());
     }
 
-    @Override
+    // Note: no @Override — local supertype chain predates Presence support.
     public PresenceConfiguration readPresenceConfiguration(ByteBuf buffer) {
         return new PresenceConfiguration(readString(buffer), readString(buffer), null);
     }

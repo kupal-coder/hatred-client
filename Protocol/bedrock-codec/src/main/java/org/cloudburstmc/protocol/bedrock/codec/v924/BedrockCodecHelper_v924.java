@@ -18,7 +18,8 @@ public class BedrockCodecHelper_v924 extends BedrockCodecHelper_v898 {
         super(entityData, gameRulesTypes, stackRequestActionTypes, containerSlotTypes, abilities, textProcessingEventOrigins);
     }
 
-    @Override
+    // Note: no @Override — local supertype chain predates Gatherings support.
+    // New API surface for v924+; currently unused by serializers.
     public void writeGatheringsConfiguration(ByteBuf buf, BedrockCodecHelper h, GatheringsConfigurationJoinInfo info) {
         h.writeUuid(buf, info.experienceId());
         h.writeString(buf, info.experienceName());
@@ -30,7 +31,7 @@ public class BedrockCodecHelper_v924 extends BedrockCodecHelper_v898 {
         h.writeString(buf, info.serverId());
     }
 
-    @Override
+    // Note: no @Override — local supertype chain predates Gatherings support.
     public GatheringsConfigurationJoinInfo readGatheringsConfiguration(ByteBuf buf, BedrockCodecHelper h) {
         return new GatheringsConfigurationJoinInfo(
                 h.readUuid(buf),
