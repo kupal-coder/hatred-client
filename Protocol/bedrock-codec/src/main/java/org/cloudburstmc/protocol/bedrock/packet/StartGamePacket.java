@@ -109,6 +109,18 @@ public class StartGamePacket implements BedrockPacket {
      * @since v944
      */
     public boolean hasServerJoinInformation;
+    /**
+     * @since v1001
+     */
+    public boolean isLoggingChat;
+    /**
+     * @since v1001
+     */
+    public int serverEditorConnectionPolicy;
+    /**
+     * @since v1001
+     */
+    public boolean allowAnonymousBlockDropsInEditorWorlds;
     public int enchantmentSeed;
     public NbtList<NbtMap> blockPalette;
     public final List<BlockPropertyData> blockProperties = new ObjectArrayList<>();

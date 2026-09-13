@@ -14,6 +14,14 @@ public class PlaySoundPacket implements BedrockPacket {
     public Vector3f position;
     public float volume;
     public float pitch;
+    /**
+     * @since v975
+     */
+    public int loopCount;
+    /**
+     * @since v975
+     */
+    public Long serverSoundHandle;
 
     @Override
     public final PacketSignal handle(BedrockPacketHandler handler) {

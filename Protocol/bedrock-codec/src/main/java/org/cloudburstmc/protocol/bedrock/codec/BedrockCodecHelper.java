@@ -8,7 +8,9 @@ import org.cloudburstmc.nbt.NbtType;
 import org.cloudburstmc.protocol.bedrock.data.EncodingSettings;
 import org.cloudburstmc.protocol.bedrock.data.ExperimentData;
 import org.cloudburstmc.protocol.bedrock.data.GameRuleData;
+import org.cloudburstmc.protocol.bedrock.data.GatheringsConfigurationJoinInfo;
 import org.cloudburstmc.protocol.bedrock.data.PlayerAbilityHolder;
+import org.cloudburstmc.protocol.bedrock.data.PresenceConfiguration;
 import org.cloudburstmc.protocol.bedrock.data.command.CommandEnumData;
 import org.cloudburstmc.protocol.bedrock.data.command.CommandOriginData;
 import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
@@ -268,4 +270,16 @@ public interface BedrockCodecHelper {
     <T extends Enum<?>> void writeLargeVarIntFlags(ByteBuf buffer, Set<T> flags, Class<T> clazz);
 
     <T extends Enum<?>> void readLargeVarIntFlags(ByteBuf buffer, Set<T> flags, Class<T> clazz);
+
+    ItemData readNetItemDescriptor(ByteBuf buffer);
+
+    void writeNetItemDescriptor(ByteBuf buffer, ItemData item);
+
+    void writePresenceConfiguration(ByteBuf buffer, PresenceConfiguration configuration);
+
+    PresenceConfiguration readPresenceConfiguration(ByteBuf buffer);
+
+    void writeGatheringsConfiguration(ByteBuf byteBuf, BedrockCodecHelper bedrockCodecHelper, GatheringsConfigurationJoinInfo gatheringsConfigurationJoinInfo);
+
+    GatheringsConfigurationJoinInfo readGatheringsConfiguration(ByteBuf byteBuf, BedrockCodecHelper bedrockCodecHelper);
 }

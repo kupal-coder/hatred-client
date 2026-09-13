@@ -5,12 +5,17 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.cloudburstmc.protocol.bedrock.data.GraphicsMode;
 import org.cloudburstmc.protocol.common.PacketSignal;
+import org.cloudburstmc.protocol.common.util.OptionalBoolean;
 
 @Data
 @EqualsAndHashCode(doNotUseGetters = true)
 @ToString(doNotUseGetters = true)
 public class UpdateClientOptionsPacket implements BedrockPacket {
     public GraphicsMode graphicsMode;
+    /**
+     * @since v975
+     */
+    public OptionalBoolean filterProfanityChange = OptionalBoolean.empty();
 
     @Override
     public PacketSignal handle(BedrockPacketHandler handler) {

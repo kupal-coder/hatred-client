@@ -103,13 +103,17 @@ static const std::vector<CodecInfo> protocols = {
         {860, "org/cloudburstmc/protocol/bedrock/codec/v860/Bedrock_v860"},
         {897, "org/cloudburstmc/protocol/bedrock/codec/v898/Bedrock_v898"},
         {924, "org/cloudburstmc/protocol/bedrock/codec/v924/Bedrock_v924"},
-        {944, "org/cloudburstmc/protocol/bedrock/codec/v944/Bedrock_v944"}
+        {944, "org/cloudburstmc/protocol/bedrock/codec/v944/Bedrock_v944"},
+        {975, "org/cloudburstmc/protocol/bedrock/codec/v975/Bedrock_v975"},
+        {1001, "org/cloudburstmc/protocol/bedrock/codec/v1001/Bedrock_v1001"},
+        {2168, "org/cloudburstmc/protocol/bedrock/codec/v2168/Bedrock_v2168"},
+        {2169, "org/cloudburstmc/protocol/bedrock/codec/v2169/Bedrock_v2169"}
 };
 
 extern "C" JNIEXPORT jobject JNICALL
 Java_com_project_lumina_relay_listener_AutoCodecPacketListener_pickProtocolCodec(JNIEnv* env, jclass clazz, jint protocolVersion) {
 
-    jclass defaultCodecClass = env->FindClass("org/cloudburstmc/protocol/bedrock/codec/v944/Bedrock_v944");
+    jclass defaultCodecClass = env->FindClass("org/cloudburstmc/protocol/bedrock/codec/v2169/Bedrock_v2169");
     if (!defaultCodecClass) return nullptr;
     jfieldID codecField = env->GetStaticFieldID(defaultCodecClass, "CODEC", "Lorg/cloudburstmc/protocol/bedrock/codec/BedrockCodec;");
     if (!codecField) {

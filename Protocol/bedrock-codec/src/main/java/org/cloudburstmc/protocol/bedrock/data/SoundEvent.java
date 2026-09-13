@@ -1010,5 +1010,65 @@ public enum SoundEvent {
      * @since v944
      */
     RESET_GROWTH,
+    /**
+     * @since v975
+     */
+    PUSHED_BY_PLAYER,
+    /**
+     * @since v975
+     */
+    BOUNCE,
+    /**
+     * @since v1001
+     */
+    SLIME_LANDING,
+    /**
+     * @since v1001
+     */
+    ABSORB_BLOCK,
+    /**
+     * @since v1001
+     */
+    EJECT_BLOCK,
+    /**
+     * @since v1001
+     */
+    GEYSER_ERUPTION_START,
+    /**
+     * @since v1001
+     */
+    GEYSER_ERUPTION_ACTIVE,
+    /**
+     * @since v1001
+     */
+    RECORD_BOUNCE,
+    /**
+     * @since v1001
+     */
+    BUCKET_FILL_LAND_ANIMAL,
+    /**
+     * @since v1001
+     */
+    BUCKET_EMPTY_LAND_ANIMAL,
+    /**
+     * @since v1001
+     */
+    GEYSER_CONTINUOUS_ERUPTION_START,
+    /**
+     * @since v1001
+     */
+    GEYSER_CONTINUOUS_ERUPTION_ACTIVE,
+    /**
+     * @since v2168
+     */
+    MOUNT,
+    /**
+     * @since v2168
+     */
+    DISMOUNT,
+    /**
+     * @since v2168
+     */
+    STRAW_BED_BREAK_LEAVE,
     UNDEFINED
 }
