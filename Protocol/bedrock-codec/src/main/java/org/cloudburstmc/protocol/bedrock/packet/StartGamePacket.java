@@ -103,6 +103,12 @@ public class StartGamePacket implements BedrockPacket {
     boolean serverAuthoritativeBlockBreaking;
     // SyncedPlayerMovementSettings end
     public long currentTick;
+    /**
+     * Whether optional server join information follows in newer protocol versions.
+     *
+     * @since v944
+     */
+    public boolean hasServerJoinInformation;
     public int enchantmentSeed;
     public NbtList<NbtMap> blockPalette;
     public final List<BlockPropertyData> blockProperties = new ObjectArrayList<>();

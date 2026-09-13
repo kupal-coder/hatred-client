@@ -56,6 +56,12 @@ public class InventoryTransactionPacket implements BedrockPacket {
      * @since v712
      */
     public ItemUseTransaction.PredictedResult clientInteractPrediction;
+    /**
+     * The client's cooldown state for the interacted item.
+     *
+     * @since v944
+     */
+    public int clientCooldownState;
 
     @Override
     public final PacketSignal handle(BedrockPacketHandler handler) {
