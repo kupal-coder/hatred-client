@@ -90,7 +90,7 @@ fun FirstTimeUserDialog(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "Welcome to Lumina!",
+                        text = "Welcome to Hatred Client!",
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.primary,
@@ -109,7 +109,7 @@ fun FirstTimeUserDialog(
                     ) {
                         ModeSelectionButton(
                             title = "Mobile Client",
-                            description = "Full Lumina experience for mobile",
+                            description = "Full Hatred experience for mobile",
                             icon = Icons.Default.Dashboard,
                             onClick = {
                                 dialogVisible = false

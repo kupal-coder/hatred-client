@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.project.lumina.client.model.VersionConfig
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 import com.project.lumina.client.util.API
 import com.project.lumina.client.util.HashCat
 import com.project.lumina.client.util.UpdateCheck
@@ -122,7 +122,7 @@ class VersionCheckerViewModel : ViewModel() {
                     minimumVersion = jsonObject.optString("minimumVersion", "-1"),
                     recommendedVersion = jsonObject.optString("recommendedVersion", "-1"),
                     supportedVersions = supportedVersions,
-                    versionMessage = jsonObject.optString("versionMessage", "Lumina requires Minecraft version %s or later to function properly.")
+                    versionMessage = jsonObject.optString("versionMessage", "Hatred Client requires Minecraft version %s or later to function properly.")
                 )
             } catch (e: Exception) {
                 println("Error loading version config: ${e.message}")
@@ -151,7 +151,7 @@ class VersionCheckerActivity : ComponentActivity() {
         val updateCheck = UpdateCheck()
         updateCheck.initiateHandshake(this)
         setContent {
-            LuminaClientTheme {
+            HatredClientTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -250,7 +250,7 @@ fun IncompatibleVersionScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Your Minecraft version ($installedVersion) is not compatible with Lumina.",
+            text = "Your Minecraft version ($installedVersion) is not compatible with Hatred Client.",
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center
         )

@@ -155,7 +155,7 @@ val MyTypography = Typography(
     labelSmall = TextStyle(fontFamily = MyFontFamily, fontSize = 11.sp),
 )
 @Composable
-fun LuminaClientTheme(
+fun HatredClientTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
@@ -174,4 +174,14 @@ fun LuminaClientTheme(
         typography = MyTypography,
         content = content
     )
+}
+
+@Deprecated("Use HatredClientTheme", ReplaceWith("HatredClientTheme(darkTheme, dynamicColor, content)"))
+@Composable
+fun LuminaClientTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    dynamicColor: Boolean = false,
+    content: @Composable () -> Unit
+) {
+    HatredClientTheme(darkTheme, dynamicColor, content)
 }

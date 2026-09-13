@@ -9,7 +9,7 @@ import androidx.compose.foundation.LocalOverscrollConfiguration
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.CompositionLocalProvider
 import com.project.lumina.client.remlink.RemoteLink
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 import android.content.Intent
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
@@ -86,7 +86,7 @@ class RemoteLinkActivity : ComponentActivity() {
         val updateCheck = UpdateCheck()
         updateCheck.initiateHandshake(this)
         setContent {
-            LuminaClientTheme {
+            HatredClientTheme {
                 CompositionLocalProvider(LocalOverscrollConfiguration provides null) {
                     RemoteLink()
                 }

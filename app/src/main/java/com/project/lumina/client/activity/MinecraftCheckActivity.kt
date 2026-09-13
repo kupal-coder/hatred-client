@@ -58,7 +58,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 import androidx.core.net.toUri
 import com.project.lumina.client.util.SessionManager
 
@@ -75,7 +75,7 @@ class MinecraftCheckActivity : ComponentActivity() {
         } else {
             
             setContent {
-                LuminaClientTheme {
+                HatredClientTheme {
                     Surface(
                         modifier = Modifier.fillMaxSize(),
                         color = MaterialTheme.colorScheme.background
@@ -140,7 +140,7 @@ fun MinecraftNotFoundScreen(onGetMinecraftClick: () -> Unit) {
         Spacer(modifier = Modifier.height(16.dp))
         
         Text(
-            text = "Lumina requires Minecraft to be installed on your device. Please install Minecraft before using this application.",
+            text = "Hatred Client requires Minecraft to be installed on your device. Please install Minecraft before using this application.",
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center
         )

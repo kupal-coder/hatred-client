@@ -114,7 +114,7 @@ private fun getDeviceInfo(): List<Pair<String, String>> {
     )
 }
 
-private fun getLuminaTechnicalInfo(context: Context): List<Pair<String, String>> {
+private fun getHatredTechnicalInfo(context: Context): List<Pair<String, String>> {
     val packageInfo = try {
         context.packageManager.getPackageInfo(context.packageName, 0)
     } catch (e: Exception) {
@@ -279,7 +279,7 @@ fun AboutScreen() {
                             icon = painterResource(id = R.drawable.ic_github),
                             label = "GitHub",
                             onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/TheProjectLumina/LuminaClient"))
+                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/kupal-coder/hatred-client"))
                                 context.startActivity(intent)
                             }
                         )
@@ -297,7 +297,7 @@ fun AboutScreen() {
                             icon = Icons.Filled.Public,
                             label = "Website",
                             onClick = {
-                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://projectlumina.netlify.app"))
+                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/kupal-coder/hatred-client"))
                                 context.startActivity(intent)
                             }
                         )
@@ -355,7 +355,7 @@ fun AboutScreen() {
                 Column(
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    getLuminaTechnicalInfo(context).forEach { (key, value) ->
+                    getHatredTechnicalInfo(context).forEach { (key, value) ->
                         val isVersionKey = key == "Version"
                         val isVersionCodeKey = key == "Version Code"
 

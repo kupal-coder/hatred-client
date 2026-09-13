@@ -174,12 +174,12 @@ class WClientUI : OverlayWindow() {
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.lumina),
-                        contentDescription = "Lumina Logo",
+                        contentDescription = "Hatred Logo",
                         tint = Color.White,
                         modifier = Modifier.size(20.dp)
                     )
                 }
-                RainbowText("Project Lumina", fontSize = 20f, fontWeight = FontWeight.Bold)
+                RainbowText("Project Hatred", fontSize = 20f, fontWeight = FontWeight.Bold)
             }
 
             

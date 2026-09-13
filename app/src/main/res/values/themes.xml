@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Theme.HatredClient" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- Legacy alias, do not use for new screens -->
     <style name="Theme.LuminaClient" parent="android:Theme.Material.Light.NoActionBar" />
 
 </resources>

@@ -22,7 +22,7 @@ import com.project.lumina.client.application.AppContext
 import com.project.lumina.client.constructors.GameManager
 import com.project.lumina.client.overlay.mods.DummyOverlay
 import com.project.lumina.client.service.Services
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 
 import kotlinx.coroutines.launch
 
@@ -119,7 +119,7 @@ object OverlayManager {
         }
         
         composeView.setContent {
-            LuminaClientTheme {
+            HatredClientTheme {
                 CompositionLocalProvider(LocalOverscrollConfiguration provides null) {
                     overlayWindow.Content()
                 }

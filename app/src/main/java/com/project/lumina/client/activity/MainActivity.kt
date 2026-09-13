@@ -67,7 +67,7 @@ import com.project.lumina.client.constructors.ArrayListManager
 import com.project.lumina.client.constructors.GameManager
 import com.project.lumina.client.game.module.api.config.ConfigManagerElement
 import com.project.lumina.client.navigation.Navigation
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 import com.project.lumina.client.util.HashCat
 import io.netty.util.internal.logging.InternalLoggerFactory
 import io.netty.util.internal.logging.JdkLoggerFactory
@@ -185,7 +185,7 @@ class MainActivity : ComponentActivity() {
                 defaultTracking = DefaultTrackingOptions.ALL,
             )
         )
-        amplitude.track("Lumina Mobile")
+        amplitude.track("Hatred Mobile")
         val sessionManager = SessionManager(applicationContext)
         sessionManager.checkSession(this)
         InternalLoggerFactory.setDefaultFactory(JdkLoggerFactory.INSTANCE)
@@ -225,7 +225,7 @@ class MainActivity : ComponentActivity() {
         RPCService.autoStartForClientMode(this)
 
         setContent {
-            LuminaClientTheme {
+            HatredClientTheme {
                 CompositionLocalProvider(LocalOverscrollConfiguration provides null) {
                     
                 Navigation()

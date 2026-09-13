@@ -105,7 +105,7 @@ class Services : Service() {
                 }
             }
 
-            thread = thread(name = "LuminaRelayThread") {
+            thread = thread(name = "HatredRelayThread") {
                 runCatching {
                     GameManager.loadConfig()
                 }.exceptionOrNull()?.let {
@@ -124,7 +124,7 @@ class Services : Service() {
                     EncryptedLoginPacketListener()
                 } else {
                     AccountManager.currentAccount?.let { account ->
-                        Log.e("LuminaRelay", "Logged in as ${account.remark}")
+                        Log.e("HatredRelay", "Logged in as ${account.remark}")
                         TerminalViewModel.addTerminalLog("Connection", "Logged in as ${account.remark}")
                         TerminalViewModel.addTerminalLog("Help", "Type '!help' in chat to use modules.")
                         XboxLoginPacketListener({ account.refresh() }, account.platform).also {
@@ -153,13 +153,13 @@ class Services : Service() {
                     }
                 }.exceptionOrNull()?.let {
                     it.printStackTrace()
-                    context.toast("Start LuminaRelay error: ${it.stackTraceToString()}")
+                    context.toast("Start HatredRelay error: ${it.stackTraceToString()}")
                 }
             }
         }
 
         private fun off() {
-            thread(name = "LuminaRelayThread") {
+            thread(name = "HatredRelayThread") {
                 GameManager.saveConfig()
                 isActive = false
                 RemisOnline = false
@@ -217,7 +217,7 @@ class Services : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
             ACTION_CAPTURE_START -> {
-                startForeground(NOTIFICATION_ID, createNotification("Lumina capture service is running"))
+                startForeground(NOTIFICATION_ID, createNotification("Hatred capture service is running"))
                 val captureModeModel = CaptureModeModel.from(
                     getSharedPreferences("game_settings", Context.MODE_PRIVATE)
                 )
@@ -251,10 +251,10 @@ class Services : Service() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 NOTIFICATION_CHANNEL_ID,
-                "Lumina Capture Service",
+                "Hatred Capture Service",
                 NotificationManager.IMPORTANCE_LOW
             ).apply {
-                description = "Used while Lumina capture mode is active"
+                description = "Used while Hatred capture mode is active"
             }
 
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -264,7 +264,7 @@ class Services : Service() {
     }
 
     private fun createNotification(text: String) = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-        .setContentTitle("Lumina Capture")
+        .setContentTitle("Hatred Capture")
         .setContentText(text)
         .setSmallIcon(R.drawable.img)
         .setPriority(NotificationCompat.PRIORITY_LOW)
