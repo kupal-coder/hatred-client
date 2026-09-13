@@ -133,12 +133,17 @@ class LaunchActivity : ComponentActivity() {
         }
 
         val remainingTime = sessionManager.getRemainingSessionTime()
-        val hours = remainingTime / (60 * 60 * 1000)
-        val minutes = (remainingTime % (60 * 60 * 1000)) / (60 * 1000)
+        val sessionMessage = if (remainingTime == Long.MAX_VALUE) {
+            "Session valid: lifetime"
+        } else {
+            val hours = remainingTime / (60 * 60 * 1000)
+            val minutes = (remainingTime % (60 * 60 * 1000)) / (60 * 1000)
+            "Session valid for ${hours}h ${minutes}m"
+        }
 
         Toast.makeText(
             this,
-            "Session valid for ${hours}h ${minutes}m",
+            sessionMessage,
             Toast.LENGTH_LONG
         ).show()
     }
