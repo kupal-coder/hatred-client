@@ -7,7 +7,12 @@ import lombok.ToString;
 import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.ContainerMixData;
 import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.MaterialReducer;
 import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.PotionMixData;
+import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.recipe.MultiRecipeData;
 import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.recipe.RecipeData;
+import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.recipe.ShapedRecipeData;
+import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.recipe.ShapelessRecipeData;
+import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.recipe.SmithingTransformRecipeData;
+import org.cloudburstmc.protocol.bedrock.data.inventory.crafting.recipe.SmithingTrimRecipeData;
 import org.cloudburstmc.protocol.common.PacketSignal;
 
 import java.util.List;
@@ -24,6 +29,40 @@ public class CraftingDataPacket implements BedrockPacket {
      */
     public final List<MaterialReducer> materialReducers = new ObjectArrayList<>();
     public boolean cleanRecipes;
+    /**
+     * Per-type recipe lists used by v2168+ serializers.
+     *
+     * @since v2168
+     */
+    public final List<ShapedRecipeData> shapedData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<ShapelessRecipeData> shapelessData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<MultiRecipeData> multiData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<ShapelessRecipeData> shapelessUserData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<ShapelessRecipeData> shapelessChemistryData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<ShapedRecipeData> shapedChemistryData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<SmithingTransformRecipeData> smithingTransformData = new ObjectArrayList<>();
+    /**
+     * @since v2168
+     */
+    public final List<SmithingTrimRecipeData> smithingTrimData = new ObjectArrayList<>();
 
     @Override
     public final PacketSignal handle(BedrockPacketHandler handler) {

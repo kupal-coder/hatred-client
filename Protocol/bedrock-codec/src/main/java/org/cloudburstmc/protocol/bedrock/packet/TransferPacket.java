@@ -3,6 +3,7 @@ package org.cloudburstmc.protocol.bedrock.packet;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.cloudburstmc.protocol.bedrock.data.GatheringsConfigurationJoinInfo;
 import org.cloudburstmc.protocol.common.PacketSignal;
 
 @Data
@@ -15,6 +16,10 @@ public class TransferPacket implements BedrockPacket {
      * @since v729
      */
     public boolean reloadWorld;
+    /**
+     * @since v2168
+     */
+    public GatheringsConfigurationJoinInfo gatheringsConfigurationJoinInfo;
 
     @Override
     public final PacketSignal handle(BedrockPacketHandler handler) {

@@ -26,6 +26,18 @@ public class MovementPredictionSyncPacket implements BedrockPacket {
     public float health;
     public float hunger;
     public boolean flying;
+    /**
+     * @since v975
+     */
+    public float frictionModifier;
+    /**
+     * @since v975
+     */
+    public float bounciness;
+    /**
+     * @since v975
+     */
+    public float airDragModifier;
 
 
     @Override

@@ -25,6 +25,22 @@ public class MoveEntityDeltaPacket implements BedrockPacket {
     public float pitch;
     public float yaw;
     public float headYaw;
+    /**
+     * @since v2168
+     */
+    public boolean onGround;
+    /**
+     * @since v2168
+     */
+    public boolean forceMove;
+    /**
+     * @since v2168
+     */
+    public boolean forceMoveLocalEntity;
+    /**
+     * @since v2168
+     */
+    public boolean forceCompletion;
 
     @Override
     public final PacketSignal handle(BedrockPacketHandler handler) {
