@@ -68,7 +68,7 @@ class ESPElement : Element(
         super.onEnabled()
         if (isSessionCreated) {
             if (renderView == null) {
-                renderView = ESPRenderOverlayView.createAndShow()
+                renderView = ESPRenderOverlayView.getOrShow()
                 ESPElement.setRenderView(renderView!!)
             }
             renderView?.post {
@@ -79,10 +79,8 @@ class ESPElement : Element(
 
     override fun onDisabled() {
         super.onDisabled()
-        renderView?.let {
-            ESPRenderOverlayView.dismissOverlay(it)
-            renderView = null
-        }
+        renderView = null
+        ESPRenderOverlayView.dismissIfUnused()
     }
 
     private fun rotateX(angle: Float): Matrix4f {
