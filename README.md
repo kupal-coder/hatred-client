@@ -41,7 +41,7 @@ Come say hello in the [Discord](https://discord.gg/78bqDpAHmK) — we’d love t
 To run Lumina Client, your device must meet the following specifications:
 
 - **Android**: Android 9.0 (Pie) or later, supporting both 64-bit and 32-bit architectures.
-- **Minecraft Version**: Minecraft Bedrock Edition 1.21.80 or later is recommended for optimal performance and compatibility.
+- **Minecraft Version**: Minecraft Bedrock Edition 1.26.12 (protocol 944) or later is recommended for optimal performance and compatibility.
 - **Non-Android Platforms**: For PC, Mac, or other devices, Lumina operates remotely through an Android device running the client.
 - **Storage**: At least 200 MB of free storage for the APK and associated data.
 - **Internet**: A stable internet connection is recommended, especially for multiplayer servers.

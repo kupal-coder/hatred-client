@@ -1,0 +1,46 @@
+package org.cloudburstmc.protocol.bedrock.packet;
+import org.cloudburstmc.protocol.common.PacketSignal;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+/**
+ * Sent by the client to indicate that the player's party identifier changed.
+ *
+ * @since v944
+ */
+@Data
+@EqualsAndHashCode(doNotUseGetters = true)
+@ToString(doNotUseGetters = true)
+public class PartyChangedPacket implements BedrockPacket {
+
+    /**
+     * The updated party identifier.
+     */
+    private String partyId;
+    /**
+     * Whether the player is the leader of the updated party.
+     *
+     * @since v975
+     */
+    private boolean partyLeader;
+
+    @Override
+    public final PacketSignal handle(BedrockPacketHandler handler) {
+        return handler.handle(this);
+    }
+
+    public BedrockPacketType getPacketType() {
+        return BedrockPacketType.PARTY_CHANGED;
+    }
+
+    @Override
+    public PartyChangedPacket clone() {
+        try {
+            return (PartyChangedPacket) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
+        }
+    }
+}
