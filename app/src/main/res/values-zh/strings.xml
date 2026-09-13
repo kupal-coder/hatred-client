@@ -116,6 +116,7 @@
     <string name="module_poison">中毒</string>
     <string name="module_wither">凋零</string>
     <string name="module_esp_display_name">ESP 覆盖</string>
+    <string name="module_oreesp_display_name">矿物ESP</string>
     <string name="module_critbot_display_name">暴击机器人</string>
     <string name="module_infiniteaura_display_name">无限光环</string>
     <string name="module_reach_display_name">扩展范围</string>

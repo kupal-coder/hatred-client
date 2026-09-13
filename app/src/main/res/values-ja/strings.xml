@@ -116,6 +116,7 @@
     <string name="module_poison">毒</string>
     <string name="module_wither">ウィザー</string>
     <string name="module_esp_display_name">ESPオーバーレイ</string>
+    <string name="module_oreesp_display_name">OreESP</string>
     <string name="module_critbot_display_name">クリティカル</string>
     <string name="module_infiniteaura_display_name">無限オーラ</string>
     <string name="module_reach_display_name">リーチ</string>

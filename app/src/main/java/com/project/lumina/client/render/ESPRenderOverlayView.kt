@@ -8,6 +8,7 @@ import android.view.WindowManager
 import com.project.lumina.client.application.AppContext
 import com.project.lumina.client.constructors.GameManager
 import com.project.lumina.client.game.module.impl.visual.ESPElement
+import com.project.lumina.client.game.module.impl.visual.OreESPElement
 
 class ESPRenderOverlayView(context: Context) : View(context) {
 
@@ -31,15 +32,34 @@ class ESPRenderOverlayView(context: Context) : View(context) {
             .filterIsInstance<ESPElement>()
             .filter { it.isEnabled && it.isSessionCreated }
 
-        activeESPModules.forEach { it.render(canvas) }
+        val activeOreModules = GameManager.elements
+            .filterIsInstance<OreESPElement>()
+            .filter { it.isEnabled && it.isSessionCreated }
 
-        if (activeESPModules.isNotEmpty()) {
+        activeESPModules.forEach { it.render(canvas) }
+        activeOreModules.forEach { it.render(canvas) }
+
+        if (activeESPModules.isNotEmpty() || activeOreModules.isNotEmpty()) {
             postInvalidateOnAnimation()
         }
     }
 
     companion object {
         private var currentOverlay: ESPRenderOverlayView? = null
+
+        fun getOrShow(): ESPRenderOverlayView {
+            currentOverlay?.let { return it }
+            return createAndShow()
+        }
+
+        fun dismissIfUnused() {
+            val anyActive = GameManager.elements.any {
+                (it is ESPElement || it is OreESPElement) && it.isEnabled
+            }
+            if (!anyActive) {
+                currentOverlay?.let { dismissOverlay(it) }
+            }
+        }
 
         fun createAndShow(): ESPRenderOverlayView {
             val context = AppContext.instance
