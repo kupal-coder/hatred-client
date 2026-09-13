@@ -93,7 +93,7 @@ fun LandscapeLauncherContent() {
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = "PROJECT LUMINA",
+                            text = "PROJECT HATRED",
                             fontSize = 28.sp,
                             fontWeight = FontWeight.Medium,
                             color = Color.White,
@@ -126,7 +126,7 @@ fun LandscapeLauncherContent() {
                 ) {
                     LauncherCard(
                         title = "Client Mode",
-                        description = "Lumina For Mobile",
+                        description = "Hatred For Mobile",
                         icon = Icons.Filled.Dashboard,
                         isLoading = loadingCard == "main",
                         onClick = {

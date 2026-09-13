@@ -420,7 +420,7 @@ fun GameUI() {
                     modifier = Modifier.align(Alignment.BottomStart)
                 ) {
                     Text(
-                        text = "© Project Lumina 2026 | v${getAppVersion(context)}",
+                        text = "© Project Hatred 2026 | v${getAppVersion(context)}",
                         color = Color.White.copy(alpha = 0.5f),
                         fontSize = 9.sp
                     )

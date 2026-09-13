@@ -53,11 +53,11 @@ import java.util.concurrent.TimeUnit
 
 private const val DEFAULT_BANNER = "https://discord.com/assets/97ac61a0b98fd6f01b4de370c9ccdb56.png"
 private const val NITRO_ICON = "https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png"
-private const val LUMINA_ICON = "https://raw.githubusercontent.com/TheProjectLumina/LuminaClient/main/images/lumina2.jpg"
-private val DISCORD_BLURPLE = Color(0xFF5865F2)
+private const val HATRED_ICON = "https://raw.githubusercontent.com/TheProjectLumina/LuminaClient/main/images/lumina2.jpg"
+private val DISCORD_BLURPLE = Color(0xFFB30000)
 
-private val profileBorderColors = listOf(Color(0xFFa3a1ed), Color(0xFFA77798))
-private val profileBackgroundColors = listOf(Color(0xFFC2C0FA), Color(0xFFFADAF0))
+private val profileBorderColors = listOf(Color(0xFFFF1E1E), Color(0xFF7F0000))
+private val profileBackgroundColors = listOf(Color(0xFF2A0A0A), Color(0xFF0A0A0A))
 
 @Composable
 fun ProfileSection(
@@ -225,10 +225,10 @@ private fun RpcActivityPreview() {
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(LUMINA_ICON)
+                    .data(HATRED_ICON)
                     .crossfade(true)
                     .build(),
-                contentDescription = "Lumina Icon",
+                contentDescription = "Hatred Icon",
                 modifier = Modifier
                     .size(60.dp)
                     .clip(RoundedCornerShape(6.dp)),
@@ -240,7 +240,7 @@ private fun RpcActivityPreview() {
             verticalArrangement = Arrangement.spacedBy(2.dp)
         ) {
             Text(
-                text = "Lumina Client",
+                text = "Hatred Client",
                 style = MaterialTheme.typography.titleSmall.copy(
                     fontWeight = FontWeight.Bold,
                     fontSize = 14.sp

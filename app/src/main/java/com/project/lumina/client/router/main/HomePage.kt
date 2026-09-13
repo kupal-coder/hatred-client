@@ -267,7 +267,7 @@ fun HomePageContent() {
                         ) {
                             
                             Text(
-                                "Lumina",
+                                "Hatred",
                                 color = MaterialTheme.colorScheme.primary,
                                 style = MaterialTheme.typography.headlineMedium,
                                 modifier = Modifier

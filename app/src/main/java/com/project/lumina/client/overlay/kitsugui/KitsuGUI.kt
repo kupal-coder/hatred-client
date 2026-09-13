@@ -242,7 +242,7 @@ class KitsuGUI : OverlayWindow() {
                 Spacer(modifier = Modifier.width(8.dp))
 
                 Text(
-                    text = "LUMINA",
+                    text = "HATRED",
                     style = TextStyle(
                         fontSize = 18.sp,
                         fontFamily = modernFont,

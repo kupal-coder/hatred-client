@@ -46,7 +46,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/img"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LuminaClient"
+        android:theme="@style/Theme.HatredClient"
         tools:targetApi="tiramisu">
 
         <activity
@@ -104,7 +104,7 @@
             android:name=".activity.DiscordLoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.LuminaClient" />
+            android:theme="@style/Theme.HatredClient" />
 
         <service
             android:name=".service.Services"
@@ -112,7 +112,7 @@
             android:foregroundServiceType="specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Lumina Capture" />
+                android:value="Hatred Capture" />
 
             <intent-filter>
                 <action android:name="com.project.lumina.relay.capture.start" />

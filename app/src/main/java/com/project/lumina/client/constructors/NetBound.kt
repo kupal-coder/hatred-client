@@ -219,7 +219,7 @@ class NetBound(val luminaRelaySession: LuminaRelaySession) : ComposedPacketHandl
                     Log.i("GameSession", "Seed: ${gameDataManager.getSeed()}")
                     Log.i("GameSession", "Game Mode: ${gameDataManager.getGameMode()}")
                     Log.i("GameSession", "LevelName: ${gameDataManager.getLevelName()}")
-                    showToast("Welcome To Lumina V4", "Connected ${gameDataManager.getLevelName()}")
+                    showToast("Welcome To Hatred Client", "Connected ${gameDataManager.getLevelName()}")
 
                     val serverIp = Services.currentServerHostName
                     if (serverIp.isNotEmpty()) {

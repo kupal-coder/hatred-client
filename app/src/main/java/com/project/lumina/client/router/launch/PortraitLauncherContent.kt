@@ -90,7 +90,7 @@ fun PortraitLauncherContent() {
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
-                            text = "PROJECT LUMINA",
+                            text = "PROJECT HATRED",
                             fontSize = 32.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.White,
@@ -124,7 +124,7 @@ fun PortraitLauncherContent() {
                 ) {
                     LauncherCard(
                         title = "Main Dashboard",
-                        description = "Access primary Lumina features",
+                        description = "Access primary Hatred features",
                         icon = Icons.Filled.Dashboard,
                         isLoading = loadingCard == "main",
                         onClick = {

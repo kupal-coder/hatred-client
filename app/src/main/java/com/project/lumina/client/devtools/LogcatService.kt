@@ -151,13 +151,13 @@ object LogcatService {
 
             val dateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.getDefault())
             val timestamp = dateFormat.format(Date())
-            val fileName = "lumina_logcat_$timestamp.txt"
+            val fileName = "hatred_logcat_$timestamp.txt"
 
             logFile = File(documentsDir, fileName)
             logFileWriter = BufferedWriter(FileWriter(logFile, true))
 
             logFileWriter?.apply {
-                write("=== Lumina Logcat Capture Started ===\n")
+                write("=== Hatred Logcat Capture Started ===\n")
                 write("Timestamp: ${Date()}\n")
                 write("Process ID: ${android.os.Process.myPid()}\n")
                 write("File: $fileName\n")
@@ -174,7 +174,7 @@ object LogcatService {
     private fun closeLogFile() {
         try {
             logFileWriter?.apply {
-                write("\n=== Lumina Logcat Capture Ended ===\n")
+                write("\n=== Hatred Logcat Capture Ended ===\n")
                 write("Timestamp: ${Date()}\n")
                 write("===================================\n")
                 flush()

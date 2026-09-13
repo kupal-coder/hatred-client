@@ -35,7 +35,7 @@ import com.amplitude.android.Amplitude
 import com.amplitude.android.Configuration
 import com.amplitude.android.DefaultTrackingOptions
 import com.project.lumina.client.R
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 import com.project.lumina.client.util.TrackUtil
 import com.project.lumina.client.util.UpdateCheck
 
@@ -53,7 +53,7 @@ class CrashHandlerActivity : ComponentActivity() {
                 defaultTracking = DefaultTrackingOptions.ALL,
             )
         )
-        amplitude.track("Lumina Crashed")
+        amplitude.track("Hatred Crashed")
         val updateCheck = UpdateCheck()
         updateCheck.initiateHandshake(this)
         val crashMessage = intent?.getStringExtra("message") ?: return finish()
@@ -61,7 +61,7 @@ class CrashHandlerActivity : ComponentActivity() {
         val parts = parseCrashMessage(crashMessage)
 
         setContent {
-            LuminaClientTheme {
+            HatredClientTheme {
                 val context = LocalContext.current
 
                 Scaffold(

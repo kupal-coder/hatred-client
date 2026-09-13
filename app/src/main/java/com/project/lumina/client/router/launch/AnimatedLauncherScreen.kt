@@ -129,7 +129,7 @@ fun AnimatedLauncherScreen() {
             }
         }
         Text(
-            text = "© Project Lumina 2026",
+            text = "© Project Hatred 2026",
             color = Color.White.copy(alpha = 0.5f),
             fontSize = 10.sp,
             modifier = Modifier

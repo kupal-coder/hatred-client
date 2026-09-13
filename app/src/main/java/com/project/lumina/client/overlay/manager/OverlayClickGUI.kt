@@ -247,7 +247,7 @@ class OverlayClickGUI : OverlayWindow() {
                             modifier = Modifier
                                 .size(24.dp)
                                 .clickable { 
-                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://projectlumina.netlify.app/")).apply {
+                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/kupal-coder/hatred-client")).apply {
                                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     }
                                     context.startActivity(intent)
@@ -260,7 +260,7 @@ class OverlayClickGUI : OverlayWindow() {
                             modifier = Modifier
                                 .size(24.dp)
                                 .clickable { 
-                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/TheProjectLumina/LuminaClient")).apply {
+                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/kupal-coder/hatred-client")).apply {
                                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     }
                                     context.startActivity(intent)

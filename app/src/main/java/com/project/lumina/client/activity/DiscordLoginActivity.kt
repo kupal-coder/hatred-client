@@ -42,7 +42,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.project.lumina.client.ui.theme.LuminaClientTheme
+import com.project.lumina.client.ui.theme.HatredClientTheme
 
 class DiscordLoginActivity : ComponentActivity() {
 
@@ -53,7 +53,7 @@ class DiscordLoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            LuminaClientTheme {
+            HatredClientTheme {
                 DiscordLoginContent(
                     isLoading = isLoading,
                     onClose = {
