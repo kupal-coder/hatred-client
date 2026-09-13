@@ -14,8 +14,6 @@ class SessionManager(private val context: Context) {
 
     companion object {
         private const val SESSION_FILE = "session_data"
-        private const val SESSION_DURATION_HOURS = 4
-        private const val SESSION_DURATION_MS = SESSION_DURATION_HOURS * 60 * 60 * 1000L
         private const val YOUR_DOMAIN = API.LVAUTH
         private const val SECRET_SALT = "pFzBVr9YzofdxjDrJO1xdW=qeEF2VVIq"
     }
@@ -61,15 +59,12 @@ class SessionManager(private val context: Context) {
             return false
         }
 
+        // Sessions never expire: any readable saved session is valid for lifetime.
         return try {
             val encodedData = sessionFile.readText()
             val decodedBytes = Base64.decode(encodedData, Base64.DEFAULT)
-            val timestamp = String(decodedBytes).toLong()
-
-            val currentTime = System.currentTimeMillis()
-            val elapsed = currentTime - timestamp
-
-            elapsed < SESSION_DURATION_MS
+            String(decodedBytes).toLong()
+            true
         } catch (e: Exception) {
             false
         }
@@ -140,18 +135,7 @@ class SessionManager(private val context: Context) {
             return 0L
         }
 
-        return try {
-            val encodedData = sessionFile.readText()
-            val decodedBytes = Base64.decode(encodedData, Base64.DEFAULT)
-            val timestamp = String(decodedBytes).toLong()
-
-            val currentTime = System.currentTimeMillis()
-            val elapsed = currentTime - timestamp
-            val remaining = SESSION_DURATION_MS - elapsed
-
-            if (remaining > 0) remaining else 0L
-        } catch (e: Exception) {
-            0L
-        }
+        // Sessions never expire.
+        return Long.MAX_VALUE
     }
 }
